@@ -1,0 +1,31 @@
+.catalog:
+  name: "MuleESB"
+  version: "1"
+  description: "MuleESB"
+  uuid: muleesb-0
+  minimum_rancher_version: v0.9.0
+  questions:
+    - variable: instance_name
+      description: "Name of the Mule ESB instance"
+      label: "MuleESB Instance"
+      required: true
+      default: "myMuleInstance"
+      type: "string"
+    - variable: port
+      description: "MuleESB Port"
+      label: "Port"
+      required: true
+      default: 8081
+      type: "int"
+    - variable: app_dir
+      description: "Application Directory"
+      label: "Mule Application Directory"
+      required: true
+      default: "/opt/mule/apps"
+      type: "string"
+    - variable: log_dir
+      description: "Log Directory"
+      label: "Mule Logs Directory"
+      required: true
+      default: "/opt/mule/logs"
+      type: "string"
