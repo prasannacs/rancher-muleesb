@@ -1,23 +1,16 @@
 version: '1'
 services:
-  postgres-lb:
+  muleesb-lb:
     image: rancher/load-balancer-service
     links:
-      - postgres
+      - muleesb
     ports:
       - ${lb_port}:5432
-
-  postgres-data:
-    image: busybox
-    labels:
-      io.rancher.container.start_once: true
-    volumes:
-      - /var/lib/postgresql/data/pgdata
 
   muleesb:
     image: vromero/mule
     environment:
-      INSTANCE_NAME: ${myMuleInstance}
+      INSTANCE_NAME: ${instance_name}
       PORT: ${port}
       APP_DIR: ${app_dir}
       LOG_DIR: ${log_dir}
